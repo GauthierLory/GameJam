@@ -52,7 +52,9 @@ public class Grille : MonoBehaviour
             {
                 Vector3 point = noeudBasGauche + Vector3.right * (x * diametreNoeud + rayonNoeud) + Vector3.up * (y * diametreNoeud + rayonNoeud);
                 //la prochaine ligne vérifie si la tuile évaluée entre en collision avec un des cubes.  Si c'est le cas, la tuile ne sera pas marchable
-                bool marchable = !(Physics.CheckSphere(point, rayonNoeud, impossibleMarcherMasque));
+
+                bool marchable = !(Physics2D.CircleCast(point, rayonNoeud - 0.1f, Vector2.up, 0, impossibleMarcherMasque));
+
                 //on créer un noeud que l'on place dans notre monde
                 //notre noeud sait s'il est marchable, connait sa position à l'aide d'un vector3 et sait sa position par rapport à la grille
                 grille[x, y] = new Noeud(marchable, point, x, y);
@@ -111,14 +113,14 @@ public class Grille : MonoBehaviour
     /// </summary>
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(dimensionMonde.x, dimensionMonde.y, 1));
+        //Gizmos.DrawWireCube(transform.position, new Vector3(dimensionMonde.x, dimensionMonde.y, 1));
 
         construireGrille();//construction de la grille
                            //pour que ça marche, il faut que le script PathFinding soit rattaché au même GameObject que le script Grille
         PathFinding pathFinding = GetComponent<PathFinding>();
 
-        GameObject depart = GameObject.Find("Player"); //trouve le joueur qui est le point de départ
-        GameObject arrivee = GameObject.Find("arrivee"); //trouve l'arrivée
+        GameObject depart = GameObject.Find("Depart"); //trouve le joueur qui est le point de départ
+        GameObject arrivee = GameObject.Find("Arrivee"); //trouve l'arrivée
                                                          //on demande à la classe Pathfinding de trouver le chemin
         pathFinding.trouverCheminGizmos(depart.transform.position, arrivee.transform.position, this);
 
@@ -134,8 +136,8 @@ public class Grille : MonoBehaviour
                         Gizmos.color = Color.cyan;
                     else if (chemin != null && chemin.Contains(n)) //si le noeud fait partie du chemin trouvé
                         Gizmos.color = Color.black;
-                    else //si ce n'est qu'une tuile marchable qui n'est pas dans le chemin trouvé
-                        Gizmos.color = Color.white;
+                    else  //si ce n'est qu'une tuile marchable qui n'est pas dans le chemin trouvé
+                        Gizmos.color = Color.clear;
                 }
                 else //si c'est un obstacle
                     Gizmos.color = Color.red;
