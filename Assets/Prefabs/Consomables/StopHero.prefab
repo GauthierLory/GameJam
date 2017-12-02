@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212048124333027656}
   - component: {fileID: 114971791168085996}
   m_Layer: 0
-  m_Name: DiminutionVitesse
-  m_TagString: Untagged
+  m_Name: StopHero
+  m_TagString: stophero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
