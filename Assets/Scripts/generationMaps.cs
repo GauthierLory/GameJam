@@ -47,7 +47,6 @@ public class GenerationMaps : MonoBehaviour
         {
             
             suivant = rnd.Next(2);
-            print(suivant);
             if (suivant == 1)
             {
                 //Creation des sols
@@ -104,7 +103,7 @@ public class GenerationMaps : MonoBehaviour
             }
         }
         //génération aléatoire d'un entier entre 0 et 2
-        int positionHero = rnd.Next(2);
+        int positionHero = rnd.Next(3);
         //instantiation du héro en fonction du nombre aléatoire
         Instantiate(hero,new Vector2(solDepart[positionHero].transform.position.x, solDepart[positionHero].transform.position.y), Quaternion.identity);
     }
