@@ -1,11 +1,17 @@
 fileFormatVersion: 2
 guid: e5da0542b52b2c74e8396d703bb87392
-timeCreated: 1512187958
+timeCreated: 1512237865
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - caisse: {fileID: 1161988697920950, guid: de9d4a1158d135d41892f5f7a6bf2396, type: 2}
+  - vitesse: {fileID: 1526310828236598, guid: 6c5c72ac77fd50c49b8c11c4120fc0e4, type: 2}
+  - pv: {instanceID: 0}
+  - coeur: {instanceID: 0}
+  - crane: {instanceID: 0}
+  - stopHero: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

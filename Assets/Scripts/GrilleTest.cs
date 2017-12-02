@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrilleTest : MonoBehaviour {
+public class GrilleTest : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Use this for initialization
+    void Start()
+    {
+
+        List<GameObject> items = new List<GameObject>(GameObject.FindGameObjectsWithTag("solDepart"));
+        items.AddRange(new List<GameObject>(GameObject.FindGameObjectsWithTag("sol")));
+        print("Nombre grille : " +items.Count);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
