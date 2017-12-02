@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionsHero : MonoBehaviour {
+    
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,12 @@ public class CollisionsHero : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "potion")
+        {
+
+        }
+    }
 }
