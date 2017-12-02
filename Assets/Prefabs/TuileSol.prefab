@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4892465817977988}
   - component: {fileID: 212530790572485152}
+  - component: {fileID: 114400656734389494}
   m_Layer: 0
   m_Name: TuileSol
   m_TagString: Untagged
@@ -35,11 +36,25 @@ Transform:
   m_GameObject: {fileID: 1570642062938742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.065046474, y: 0.18619819, z: 0.03515625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114400656734389494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1570642062938742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd6b33656e522a41ab74fb36f432587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 1
+  height: 1
+  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!212 &212530790572485152
 SpriteRenderer:
   m_ObjectHideFlags: 1
