@@ -21,5 +21,9 @@ public class CollisionsHero : MonoBehaviour {
         {
 
         }
+        else if (collider.tag == "ennemi")
+        {
+
+        }
     }
 }
