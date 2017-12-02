@@ -8,11 +8,13 @@ public class Menu : MonoBehaviour {
     public Canvas CanvasMenu;
     public Canvas CanvasOption;
     public Canvas CanvasNiveau;
+    public Canvas CanvasCommentJouer;
 
     void Awake()
     {
         CanvasOption.enabled = false;
         CanvasNiveau.enabled = false;
+        CanvasCommentJouer.enabled = false;
     }
 
     public void OptionsOn()
@@ -20,12 +22,14 @@ public class Menu : MonoBehaviour {
         CanvasOption.enabled = true;
         CanvasNiveau.enabled = false;
         CanvasMenu.enabled = false;
+        CanvasCommentJouer.enabled = false;
     }
 
     public void ReturnOn()
     {
         CanvasOption.enabled = false;
         CanvasNiveau.enabled = false;
+        CanvasCommentJouer.enabled = false;
         CanvasMenu.enabled = true;
     }
 
@@ -33,7 +37,16 @@ public class Menu : MonoBehaviour {
     {
         CanvasOption.enabled = false;
         CanvasMenu.enabled = false;
+        CanvasCommentJouer.enabled = false;
         CanvasNiveau.enabled = true;
+    }
+
+    public void CommentJouerOn()
+    {
+        CanvasOption.enabled = false;
+        CanvasMenu.enabled = false;
+        CanvasNiveau.enabled = false;
+        CanvasCommentJouer.enabled = true;
     }
 
     public void LoadOn()
