@@ -93,6 +93,28 @@ public class PathFinding : MonoBehaviour
             }
         }
     }
+    /// <summary>
+	/// méthode qui va remonter la liste de parent pour déterminer le chemin
+	/// </summary>
+	/// <param name="depart">Depart.</param>
+	/// <param name="arrivee">Arrivee.</param>
+	private void tracerChemin(Noeud depart, Noeud arrivee)
+    {
+        List<Noeud> chemin = new List<Noeud>();
+        Noeud noeudCourant = arrivee;//on place notre noeud courant sur la tuile d'arrivée
+
+        while (noeudCourant.parent != depart) //on remonte la chaine de parent jusqu'à la tuile de départ
+        {
+            chemin.Add(noeudCourant);
+            noeudCourant = noeudCourant.parent;
+        }
+
+        chemin.Add(noeudCourant);//on oublie pas d'ajouter la tuile de départ dans notre chemin
+
+        chemin.Reverse(); //on inverse pour que le chemin commence à la tuile de départ
+
+        grille.chemin = chemin; //on indique à l'objet grille quel est le chemin puisque c'est cet objet qui va dessiner la grille contenant le chemin
+    }
 
     private int getDistance(Noeud noeudA, Noeud noeudB)
     {
