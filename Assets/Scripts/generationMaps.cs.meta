@@ -1,17 +1,18 @@
 fileFormatVersion: 2
 guid: e5da0542b52b2c74e8396d703bb87392
-timeCreated: 1512239128
+timeCreated: 1512257902
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - caisse: {fileID: 1161988697920950, guid: de9d4a1158d135d41892f5f7a6bf2396, type: 2}
+  - caisse: {instanceID: 0}
   - vitesse: {fileID: 1526310828236598, guid: 6c5c72ac77fd50c49b8c11c4120fc0e4, type: 2}
   - pv: {fileID: 1527835665482768, guid: d85259ded1088b8498ea39624e21d26f, type: 2}
   - coeur: {fileID: 1857334030451884, guid: f5274dd845a9eb84f82c568370a25fbc, type: 2}
   - crane: {fileID: 1360347081475830, guid: 7d513ddbccbdcb0498e2ec100581d23d, type: 2}
   - stopHero: {fileID: 1694464922975510, guid: 2117c1238845b514991e8437c2383290, type: 2}
+  - hero: {fileID: 1874145711934714, guid: 435869f0ffaddbb469493b59b65caa51, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
