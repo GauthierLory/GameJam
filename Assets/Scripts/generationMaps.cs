@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Ce script genere les caisses sur les maps aleatoirement
+//Ce script genere les caisses sur les maps aleatoirement avec les items
+
 public class GenerationMaps : MonoBehaviour
 {
     //Recuperation de l'image de la caisse
@@ -36,10 +37,7 @@ public class GenerationMaps : MonoBehaviour
         //de 0 au nombre de sols
         for (int i = 0; i < sol.Length; i++)
         {
-            if (i == 0)
-            {
-                Destroy(sol[i]);
-            }
+            
             suivant = rnd.Next(2);
             print(suivant);
             if (suivant == 1)
