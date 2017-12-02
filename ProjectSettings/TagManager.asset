@@ -9,6 +9,11 @@ TagManager:
   - Option
   - ChoixNiveau
   - caisse
+  - cranemort
+  - potion
+  - coeur
+  - vitesseaugmentee
+  - stophero
   layers:
   - Default
   - TransparentFX
