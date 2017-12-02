@@ -13,7 +13,7 @@ public class GenerationMaps : MonoBehaviour
     public GameObject pv;
     public GameObject coeur;
     public GameObject crane;
-    public GameObject dimunitionVitesse;
+    public GameObject stopHero;
 
     //Creation d'un tableau sol
     GameObject[] sol;
@@ -54,10 +54,42 @@ public class GenerationMaps : MonoBehaviour
             if(suivant == 5)
             {
                 //apparition bonus
+                suivant2 = rnd.Next(2);
+                switch (suivant2)
+                {
+                    case 0:
+                        //generation item PV
+                        Instantiate(pv, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        break;
+
+                    case 1:
+                        //generation item vitesse
+                        Instantiate(vitesse, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        break;
+
+                    case 2:
+                        //generation item coeur
+                        Instantiate(stopHero, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        break;
+
+                }
+                
             }
             else if(suivant == 6)
             {
                 //apparition malus
+                suivant2 = rnd.Next(1);
+                switch (suivant2)
+                {
+                    case 0:
+                        Instantiate(crane, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        break;
+
+                    case 1:
+                        Instantiate(vitesse, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        break;
+                }
+
             }
         }
     }
