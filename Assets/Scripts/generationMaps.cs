@@ -16,6 +16,12 @@ public class GenerationMaps : MonoBehaviour
     public GameObject crane;
     public GameObject stopHero;
 
+    // Initialisation du hero
+    public GameObject hero;
+
+    //Creation d'un tableau solDepart
+    private GameObject[] solDepart;
+
     //Creation d'un tableau sol
     GameObject[] sol;
 
@@ -32,8 +38,10 @@ public class GenerationMaps : MonoBehaviour
     {
         //Recuperation de tous les gameobjects avec le tag sol
         sol = GameObject.FindGameObjectsWithTag("sol");
+        //Recuperation de tous les gameobjects avec le tag solDepart
+        solDepart = GameObject.FindGameObjectsWithTag("solDepart");
 
-        rnd = new System.Random();
+                rnd = new System.Random();
         //de 0 au nombre de sols
         for (int i = 0; i < sol.Length; i++)
         {
@@ -95,6 +103,10 @@ public class GenerationMaps : MonoBehaviour
                 }
             }
         }
+        //génération aléatoire d'un entier entre 0 et 2
+        int positionHero = rnd.Next(2);
+        //instantiation du héro en fonction du nombre aléatoire
+        Instantiate(hero,new Vector2(solDepart[positionHero].transform.position.x, solDepart[positionHero].transform.position.y), Quaternion.identity);
     }
 
     void Update()
