@@ -20,22 +20,26 @@ public class GenerationMaps : MonoBehaviour
 
     //Creation tableau prenant toutes les caisses présentent
     GameObject[] tagCaisses;
-    
+
 
     //Instantation de la fonction Random
     System.Random rnd;
     int suivant;
     int suivant2;
-    
+
     void Start()
     {
         //Recuperation de tous les gameobjects avec le tag sol
         sol = GameObject.FindGameObjectsWithTag("sol");
-        
-        rnd = new System.Random ();
+
+        rnd = new System.Random();
         //de 0 au nombre de sols
         for (int i = 0; i < sol.Length; i++)
         {
+            if (i == 0)
+            {
+                Destroy(sol[i]);
+            }
             suivant = rnd.Next(2);
             print(suivant);
             if (suivant == 1)
@@ -48,10 +52,10 @@ public class GenerationMaps : MonoBehaviour
         //Recuperation de tous les gameObjects avec le tag caisse
         tagCaisses = GameObject.FindGameObjectsWithTag("caisse");
 
-        for (int j = 0; j< tagCaisses.Length; j++)
+        for (int j = 0; j < tagCaisses.Length; j++)
         {
-            suivant = rnd.Next(10);
-            if(suivant == 5)
+            suivant = rnd.Next(15);
+            if (suivant == 5)
             {
                 //apparition bonus
                 suivant2 = rnd.Next(2);
@@ -73,9 +77,9 @@ public class GenerationMaps : MonoBehaviour
                         break;
 
                 }
-                
+
             }
-            else if(suivant == 6)
+            else if (suivant == 6)
             {
                 //apparition malus
                 suivant2 = rnd.Next(1);
@@ -98,6 +102,6 @@ public class GenerationMaps : MonoBehaviour
     void Update()
     {
 
-        
+
     }
 }
