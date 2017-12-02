@@ -15,6 +15,7 @@ TagManager:
   - vitesseaugmentee
   - stophero
   - solDepart
+  - obstacle
   layers:
   - Default
   - TransparentFX
