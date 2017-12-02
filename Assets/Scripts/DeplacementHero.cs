@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class DeplacementHero : MonoBehaviour {
 
+    private static float VITESSE_HERO = 2.0f;
     Rigidbody2D personnage;
-    bool keypressed = false;
+    bool keypressedRight = false;
+    bool keypressedLeft = false;
+    bool keypressedUp = false;
+    bool keypressedDown = false;
 
     // Use this for initialization
     void Start () {
@@ -14,15 +18,45 @@ public class DeplacementHero : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.RightArrow) || keypressed)
+        if (Input.GetKeyDown(KeyCode.RightArrow) || keypressedRight)
         {
-            keypressed = true;
-            personnage.transform.Translate(Vector3.right * 2.3f * Time.deltaTime, Space.World);
+            keypressedRight = true;
+            personnage.transform.Translate(Vector3.right * VITESSE_HERO * Time.deltaTime, Space.World);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
-            keypressed = false;
+            keypressedRight = false;
             personnage.transform.Translate(Vector3.right * 0 * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || keypressedLeft)
+        {
+            keypressedLeft = true;
+            personnage.transform.Translate(Vector3.left * VITESSE_HERO * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            keypressedLeft = false;
+            personnage.transform.Translate(Vector3.left * 0 * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) || keypressedUp)
+        {
+            keypressedUp = true;
+            personnage.transform.Translate(Vector3.up * VITESSE_HERO * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            keypressedUp = false;
+            personnage.transform.Translate(Vector3.up * 0 * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) || keypressedDown)
+        {
+            keypressedDown = true;
+            personnage.transform.Translate(Vector3.down * VITESSE_HERO * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            keypressedDown = false;
+            personnage.transform.Translate(Vector3.down * 0 * Time.deltaTime, Space.World);
         }
     }
 }
