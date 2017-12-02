@@ -69,7 +69,7 @@ public class GenerationMaps : MonoBehaviour
 
                     case 2:
                         //generation item coeur
-                        Instantiate(stopHero, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        Instantiate(coeur, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
                         break;
 
                 }
@@ -82,14 +82,15 @@ public class GenerationMaps : MonoBehaviour
                 switch (suivant2)
                 {
                     case 0:
+                        //generation crane
                         Instantiate(crane, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
                         break;
 
                     case 1:
-                        Instantiate(vitesse, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
+                        //generation stopHero
+                        Instantiate(stopHero, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
                         break;
                 }
-
             }
         }
     }
