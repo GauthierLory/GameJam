@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4822768374587098}
   - component: {fileID: 212725998680932694}
   - component: {fileID: 114372311854288044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Maison rouge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

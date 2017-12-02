@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4951379779260736}
   - component: {fileID: 212405223958466386}
   - component: {fileID: 114464735990845784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Decor
   m_TagString: caisse
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4974090482801408}
   - component: {fileID: 212281219334697582}
   - component: {fileID: 114460472557902598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pierre Verte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
