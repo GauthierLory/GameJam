@@ -5,7 +5,9 @@ using UnityEngine;
 public class DeplacementEnnemies : MonoBehaviour
 {
 
-    public Rigidbody2D ennemie;
+    private Rigidbody2D ennemie;
+
+    private static float VITESSE_ENNEMIE = 3.0f;
 
     // Use this for initialization
     void Start()
@@ -16,6 +18,6 @@ public class DeplacementEnnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ennemie.transform.Translate(Vector3.left * 0 * Time.deltaTime, Space.World);
+        ennemie.transform.Translate(Vector3.left * VITESSE_ENNEMIE * Time.deltaTime, Space.World);
     }
 }
