@@ -42,7 +42,7 @@ public class GenerationMaps : MonoBehaviour
     int suivantEnnemy;
     private bool estTerminee = false;
 
-    static int stage = 5;
+    static int stage = 1;
 
     void Start()
     {
@@ -205,10 +205,12 @@ public class GenerationMaps : MonoBehaviour
         
     }
 
+
+    //Gestion des stages
     void GestionStage()
     {
         estTerminee = true;
-        //stage += stage;
+        stage += stage;
 
         if (stage == 5 && Application.loadedLevelName == "Level1")
         {
