@@ -6,7 +6,12 @@ public class DeplacementHero : MonoBehaviour {
 
     //vitesse du personnage
     private static float VITESSE_HERO = 2.0f;
+
+    //Initialisation du personnage
     Rigidbody2D personnage;
+
+    //Initialisation de la bombe
+    public GameObject bombe;
 
     //variable pour définir si les touches de déplacements sont actives
     bool keypressedRight = false;
@@ -76,6 +81,11 @@ public class DeplacementHero : MonoBehaviour {
         {
             keypressedDown = false;
             personnage.transform.Translate(Vector3.down * 0 * Time.deltaTime, Space.World);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Instantiate(bombe,new Vector3(personnage.transform.position.x,personnage.position.y),Quaternion.identity);
         }
     }
 }
