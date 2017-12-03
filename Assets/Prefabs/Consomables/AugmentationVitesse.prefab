@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212372518321092726}
   - component: {fileID: 114344996137304898}
   - component: {fileID: 61940564190252830}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AugmentationVitesse
   m_TagString: vitesseaugmentee
   m_Icon: {fileID: 0}

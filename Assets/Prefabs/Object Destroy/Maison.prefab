@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61760718084774624}
   m_Layer: 8
   m_Name: Maison
-  m_TagString: Untagged
+  m_TagString: caisse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

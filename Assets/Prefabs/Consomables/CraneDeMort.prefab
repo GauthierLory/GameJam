@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212572239902737062}
   - component: {fileID: 114767698595954350}
   - component: {fileID: 61161986003237740}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CraneDeMort
   m_TagString: cranemort
   m_Icon: {fileID: 0}

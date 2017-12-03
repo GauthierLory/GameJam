@@ -16,6 +16,7 @@ TagManager:
   - stophero
   - solDepart
   - obstacle
+  - murDestructible
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - nonSpawnable
   - player
   - bombe
-  - 
+  - items
   - 
   - 
   - 

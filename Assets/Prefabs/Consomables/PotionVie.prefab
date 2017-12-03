@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212086119028745842}
   - component: {fileID: 114254044896725256}
   - component: {fileID: 61518518807157296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PotionVie
   m_TagString: potion
   m_Icon: {fileID: 0}
