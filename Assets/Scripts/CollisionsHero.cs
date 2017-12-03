@@ -13,8 +13,8 @@ public class CollisionsHero : MonoBehaviour {
     private static int POINTS_CRANE_MORT = 10;
     //definition scores
     private static int SCORE_INITIAL = 0;
-    private static int SCORE_ACTUEL;
-    private static int SCORE_GAGNANT = 180;
+    public static int SCORE_ACTUEL;
+    public static int SCORE_GAGNANT = 180;
     //definition vie
     private static int POINT_VIE = 1;
     private static int VIE_INITIALE = 3;

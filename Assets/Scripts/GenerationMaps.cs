@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Ce script genere les caisses sur les maps aleatoirement avec les items
 
@@ -8,6 +9,7 @@ public class GenerationMaps : MonoBehaviour
 {
     //Recuperation de l'image de la caisse
     public GameObject caisse;
+    //CollisionsHero collisionHero;
 
     //Initiation des ITEMS
     public GameObject vitesse;
@@ -29,13 +31,18 @@ public class GenerationMaps : MonoBehaviour
     //Creation tableau prenant toutes les caisses présentent
     GameObject[] tagCaisses;
 
+    //Scenes
+
+
 
     //Instantation de la fonction Random
     System.Random rnd;
     int suivant;
     int suivant2;
     int suivantEnnemy;
-    //int stage = 1;
+    private bool estTerminee = false;
+
+    static int stage = 1;
 
     void Start()
     {
@@ -121,11 +128,17 @@ public class GenerationMaps : MonoBehaviour
 
 
 
+
     }
 
     void Update()
     {
 
+        if (CollisionsHero.SCORE_ACTUEL == CollisionsHero.SCORE_GAGNANT)
+        {
+            GestionStage();
+
+        }
 
 
     }
@@ -140,10 +153,37 @@ public class GenerationMaps : MonoBehaviour
             if (sol[j].layer != 9 && nb > 0)
             {
                 Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
-                print("coucou");
                 nb -= 1;
             }
         }
+    }
 
+    void GestionStage()
+    {
+        estTerminee = true;
+        stage += stage;
+
+        if (stage == 5 && Application.loadedLevelName == "Level1")
+        {
+            Application.LoadLevel("level2");
+        }
+        else if (stage == 5 && Application.loadedLevelName == "level3")
+        {
+            Application.LoadLevel("level3");
+        }
+        else if (stage == 5 && Application.loadedLevelName == "level4")
+        {
+            Application.LoadLevel("level4");
+        }
+
+        else if (stage == 5 && Application.loadedLevelName == "Level5")
+        {
+
+        }
+
+        else
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 }
