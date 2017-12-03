@@ -6684,11 +6684,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.0723
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.6825
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6733,6 +6733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736afd0cb4b4a2b4d97de5bf07011f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
 --- !u!61 &903869595
 BoxCollider2D:
   m_ObjectHideFlags: 0

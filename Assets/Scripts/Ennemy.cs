@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Ennemy : MonoBehaviour {
 
+    public float moveSpeed = 2f;
+    private Rigidbody body;
+
+    private int vie = 3;
+
+
 	// Use this for initialization
 	void Start () {
 		
