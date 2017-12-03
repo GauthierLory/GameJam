@@ -34,6 +34,8 @@ public class GenerationMaps : MonoBehaviour
     System.Random rnd;
     int suivant;
     int suivant2;
+    int suivantEnnemy;
+    //int stage = 1;
 
     void Start()
     {
@@ -41,7 +43,8 @@ public class GenerationMaps : MonoBehaviour
         sol = GameObject.FindGameObjectsWithTag("sol");
         //Recuperation de tous les gameobjects avec le tag solDepart
         solDepart = GameObject.FindGameObjectsWithTag("solDepart");
-        bool estEgalSol = false;
+
+        
 
         rnd = new System.Random();
 
@@ -54,10 +57,9 @@ public class GenerationMaps : MonoBehaviour
             {
                 //Creation des sols
                 Instantiate(caisse, new Vector2(sol[i].transform.position.x, sol[i].transform.position.y), Quaternion.identity);
+                sol[i].layer = 9;
             }
-            
-            
-            
+
         }
 
         //Recuperation de tous les gameObjects avec le tag caisse
@@ -107,31 +109,40 @@ public class GenerationMaps : MonoBehaviour
                         break;
                 }
             }
-            for (int i = 0; i < sol.Length; i++)
-            {
-                //Si une caisse est déja sur un sol alors estEgalSol renvoi faux
-                if (sol[i].transform.position.x == tagCaisses[j].transform.position.x && sol[i].transform.position.y == tagCaisses[j].transform.position.y)
-                {
-                    estEgalSol = true;
-                }
-                //sinon il instancie l'ennemie
-                else
-                {
-                    //Instantiate(ennemy, new Vector3(sol[i].transform.position.x, sol[i].transform.position.y), Quaternion.identity);
-                    print("coucou");
-                }
 
-            }
         }
+
+
         //génération aléatoire d'un entier entre 0 et 2
         int positionHero = rnd.Next(3);
         //instantiation du héro en fonction du nombre aléatoire
         Instantiate(hero,new Vector2(solDepart[positionHero].transform.position.x, solDepart[positionHero].transform.position.y), Quaternion.identity);
+        InstantiateEnnemy();
+
+
+
     }
 
     void Update()
     {
+        
 
+
+    }
+    
+    void InstantiateEnnemy()
+    {
+        int nb = 5;
+        sol = GameObject.FindGameObjectsWithTag("sol");
+        
+        for(int j = 0; j < sol.Length; j++)
+        {
+            if(sol[j].layer != 9 && nb > 0) {
+                Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                print("coucou");
+                nb -= 1;
+            }
+        }
 
     }
 }
