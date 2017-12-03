@@ -15,6 +15,7 @@ public class GenerationMaps : MonoBehaviour
     public GameObject coeur;
     public GameObject crane;
     public GameObject stopHero;
+    public GameObject ennemy;
 
     // Initialisation du hero
     public GameObject hero;
@@ -40,8 +41,10 @@ public class GenerationMaps : MonoBehaviour
         sol = GameObject.FindGameObjectsWithTag("sol");
         //Recuperation de tous les gameobjects avec le tag solDepart
         solDepart = GameObject.FindGameObjectsWithTag("solDepart");
+        bool estEgalSol = false;
 
-                rnd = new System.Random();
+        rnd = new System.Random();
+
         //de 0 au nombre de sols
         for (int i = 0; i < sol.Length; i++)
         {
@@ -52,6 +55,9 @@ public class GenerationMaps : MonoBehaviour
                 //Creation des sols
                 Instantiate(caisse, new Vector2(sol[i].transform.position.x, sol[i].transform.position.y), Quaternion.identity);
             }
+            
+            
+            
         }
 
         //Recuperation de tous les gameObjects avec le tag caisse
@@ -100,6 +106,21 @@ public class GenerationMaps : MonoBehaviour
                         Instantiate(stopHero, new Vector2(tagCaisses[j].transform.position.x, tagCaisses[j].transform.position.y), Quaternion.identity);
                         break;
                 }
+            }
+            for (int i = 0; i < sol.Length; i++)
+            {
+                //Si une caisse est déja sur un sol alors estEgalSol renvoi faux
+                if (sol[i].transform.position.x == tagCaisses[j].transform.position.x && sol[i].transform.position.y == tagCaisses[j].transform.position.y)
+                {
+                    estEgalSol = true;
+                }
+                //sinon il instancie l'ennemie
+                else
+                {
+                    //Instantiate(ennemy, new Vector3(sol[i].transform.position.x, sol[i].transform.position.y), Quaternion.identity);
+                    print("coucou");
+                }
+
             }
         }
         //génération aléatoire d'un entier entre 0 et 2

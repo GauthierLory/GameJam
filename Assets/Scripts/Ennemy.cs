@@ -9,6 +9,7 @@ public class Ennemy : MonoBehaviour {
 
     private int vie = 3;
 
+    private GameObject[] sol;
 
 	// Use this for initialization
 	void Start () {

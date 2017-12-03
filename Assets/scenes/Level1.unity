@@ -4701,6 +4701,7 @@ MonoBehaviour:
   coeur: {fileID: 1857334030451884, guid: f5274dd845a9eb84f82c568370a25fbc, type: 2}
   crane: {fileID: 1360347081475830, guid: 7d513ddbccbdcb0498e2ec100581d23d, type: 2}
   stopHero: {fileID: 1694464922975510, guid: 2117c1238845b514991e8437c2383290, type: 2}
+  ennemy: {fileID: 1726843606201230, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
   hero: {fileID: 1445902629648326, guid: 435869f0ffaddbb469493b59b65caa51, type: 2}
 --- !u!4 &595170001
 Transform:
@@ -6675,110 +6676,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4892465817977988, guid: 4a3bfc87938936d46b94c2d3e02125d3,
     type: 2}
   m_PrefabInternal: {fileID: 892181413}
---- !u!1001 &903869592
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.013798461
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714956618856236, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 43490595650ecc34e94e2f25433c77d8, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &903869593 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1726843606201230, guid: 43490595650ecc34e94e2f25433c77d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 903869592}
---- !u!114 &903869594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 903869593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736afd0cb4b4a2b4d97de5bf07011f3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
---- !u!61 &903869595
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 903869593}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.37, y: 0.36}
-    newSize: {x: 0.4, y: 0.39}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.37, y: 0.36}
-  m_EdgeRadius: 0
---- !u!50 &903869596
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 903869593}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &905599624
 Prefab:
   m_ObjectHideFlags: 0
