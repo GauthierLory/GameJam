@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114577254764522588}
   - component: {fileID: 50100286277672166}
   - component: {fileID: 61217580391115952}
+  - component: {fileID: 95775258014211138}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.61}
   m_EdgeRadius: 0
+--- !u!95 &95775258014211138
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874145711934714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87e55e2f7a6970042b10e91140f5f271, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114577254764522588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df2c118f2c52ed4d841d28813bdef29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombe: {fileID: 0}
 --- !u!212 &212805219879870364
 SpriteRenderer:
   m_ObjectHideFlags: 1
