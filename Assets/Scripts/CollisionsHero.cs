@@ -20,39 +20,47 @@ public class CollisionsHero : MonoBehaviour {
     private static int VIE_INITIALE = 3;
     private static int VIE_ACTUELLE;
 
+    private Menu gui;
+
+
     // Use this for initialization
     void Start () {
-        SCORE_ACTUEL = SCORE_INITIAL;
-        VIE_ACTUELLE = VIE_INITIALE;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        
+    }
 
     //ajout ou supression des points, des vies lors de la collision du hero avec les items
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "potion")
         {
+            Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_POTION;
         }
         else if (collider.tag == "cranemort")
         {
+            Destroy(collider.gameObject);
             SCORE_ACTUEL -= POINTS_CRANE_MORT;
         }
         else if (collider.tag == "vitesseaugmentee")
         {
+            Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_VITESSE_AUGMENTEE;
         }
         else if (collider.tag == "coeur")
         {
+            Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_COEUR;
             VIE_ACTUELLE += POINT_VIE;
         }
         else if (collider.tag == "stophero")
         {
+            Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_STOP_HERO;
         }
     }

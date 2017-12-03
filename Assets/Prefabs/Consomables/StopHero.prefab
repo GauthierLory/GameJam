@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4362384468994618}
   - component: {fileID: 212048124333027656}
   - component: {fileID: 114971791168085996}
+  - component: {fileID: 61310676969617906}
   m_Layer: 0
   m_Name: StopHero
   m_TagString: stophero
@@ -41,6 +42,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61310676969617906
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694464922975510}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.75, y: 5.75}
+    newSize: {x: 5.75, y: 5.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.75, y: 5.75}
+  m_EdgeRadius: 0
 --- !u!114 &114971791168085996
 MonoBehaviour:
   m_ObjectHideFlags: 1
