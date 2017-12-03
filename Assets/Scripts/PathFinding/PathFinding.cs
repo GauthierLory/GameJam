@@ -74,7 +74,7 @@ public class PathFinding : MonoBehaviour
 
                 foreach (Noeud voisin in voisins)
                 {
-                    if (!voisin.walkable || closedList.Contains(voisin))//s'il n'est pas marchable ou s'il est déjà dans la closed list
+                    if (!voisin.walkable || closedList.Contains(voisin) || !grille.retourneNoeud(noeudCourant.grilleX, voisin.grilleY).walkable || !grille.retourneNoeud(voisin.grilleX, noeudCourant.grilleY).walkable)//s'il n'est pas marchable ou s'il est déjà dans la closed list
                         continue;
                     //recalculer le coût de ce noeud
                     int nouveauGCost = noeudCourant.gCost + getDistance(noeudCourant, voisin);

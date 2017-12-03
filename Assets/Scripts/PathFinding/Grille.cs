@@ -89,6 +89,11 @@ public class Grille : MonoBehaviour
 
         return voisins;
     }
+
+    public Noeud retourneNoeud(int ligne, int colonne)
+    {
+        return grille[ligne, colonne];
+    }
     /// <summary>
     /// Cette méthode reçoit une position dans le monde et retourne le noeud associé à cette position.
     /// Sera utile pour déterminer le noeud associé à la position de mon personnage entre autre.
