@@ -14,7 +14,7 @@ public class ExplosionBombe : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Destruction de la bombe au bout de 3s
+        //Destruction de la bombe au bout de 2.8s
         Destroy(this.gameObject, VITESSE_BOMBE);
     }
 }

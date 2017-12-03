@@ -10,7 +10,9 @@ public class DeplacementHero : MonoBehaviour
     private bool versDroite = true;
     private bool versHaut = true;
 
-
+    private static float TEMPS_LANCEMENT_BOMBE = 3.0f;
+    private float tempsRestant = 0.0f;
+    private bool bombeLance=false;
 
     //Initialisation du personnage
     Rigidbody2D personnage;
@@ -129,9 +131,21 @@ public class DeplacementHero : MonoBehaviour
             personnage.transform.Translate(Vector3.down * 0 * Time.deltaTime, Space.World);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && bombeLance==false)
         {
+            bombeLance = true;
+            tempsRestant = TEMPS_LANCEMENT_BOMBE;
             Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
+        }
+
+        if (bombeLance == true)
+        {
+            tempsRestant -= Time.deltaTime;
+
+            if(tempsRestant < 0.0f)
+            {
+                bombeLance = false;
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
