@@ -47,6 +47,7 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow) || keypressedRight)
         {
             keypressedRight = true;
+            animateur.SetBool("mHorizontal", true);
             personnage.transform.Translate(Vector3.right * VITESSE_HERO * Time.deltaTime, Space.World);
         }
 
@@ -54,6 +55,8 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
             keypressedRight = false;
+            animateur.SetBool("mHorizontal", false);
+
             personnage.transform.Translate(Vector3.right * 0 * Time.deltaTime, Space.World);
         }
 
@@ -61,6 +64,8 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) || keypressedLeft)
         {
             keypressedLeft = true;
+            animateur.SetBool("mHorizontal", true);
+
             personnage.transform.Translate(Vector3.left * VITESSE_HERO * Time.deltaTime, Space.World);
         }
 
@@ -68,6 +73,8 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
             keypressedLeft = false;
+            animateur.SetBool("mHorizontal", false);
+
             personnage.transform.Translate(Vector3.left * 0 * Time.deltaTime, Space.World);
         }
 
@@ -75,6 +82,16 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || keypressedUp)
         {
             keypressedUp = true;
+            animateur.SetBool("mHorizontal", false);
+
+            animateur.SetBool("mHaut", true);
+
+            float move = Input.GetAxis("Vertical");
+
+            animateur.SetFloat("speed", Mathf.Abs(move));
+
+            body.velocity = new Vector2(move * VITESSE_HERO, body.velocity.x);
+
             personnage.transform.Translate(Vector3.up * VITESSE_HERO * Time.deltaTime, Space.World);
         }
 
@@ -82,6 +99,8 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             keypressedUp = false;
+            animateur.SetBool("mHaut", false);
+
             personnage.transform.Translate(Vector3.up * 0 * Time.deltaTime, Space.World);
         }
 
@@ -89,6 +108,15 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) || keypressedDown)
         {
             keypressedDown = true;
+            animateur.SetBool("mHorizontal", false);
+
+            animateur.SetBool("mBas", true);
+            float move = Input.GetAxis("Vertical");
+
+            animateur.SetFloat("speed", Mathf.Abs(move));
+
+            body.velocity = new Vector2(move * VITESSE_HERO, body.velocity.x);
+
             personnage.transform.Translate(Vector3.down * VITESSE_HERO * Time.deltaTime, Space.World);
         }
 
@@ -96,6 +124,8 @@ public class DeplacementHero : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             keypressedDown = false;
+            animateur.SetBool("mBas", false);
+      
             personnage.transform.Translate(Vector3.down * 0 * Time.deltaTime, Space.World);
         }
 
@@ -104,7 +134,7 @@ public class DeplacementHero : MonoBehaviour
             Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
         }
     }
-
+    
     void FixedUpdate()
 
     {
@@ -119,7 +149,7 @@ public class DeplacementHero : MonoBehaviour
             flip();
         else if (move < 0 && versDroite)
             flip();
-
+       
     }
 
     private void flip()
@@ -130,8 +160,6 @@ public class DeplacementHero : MonoBehaviour
         theScale.x *= -1;
 
         transform.localScale = theScale;
-
-  
 
     }
 }
