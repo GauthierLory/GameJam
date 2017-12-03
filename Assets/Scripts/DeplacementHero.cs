@@ -133,6 +133,12 @@ public class DeplacementHero : MonoBehaviour
         {
             Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
         }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animateur.Play("Bombe");
+        }
+
     }
     
     void FixedUpdate()
