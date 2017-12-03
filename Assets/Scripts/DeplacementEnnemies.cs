@@ -20,4 +20,13 @@ public class DeplacementEnnemies : MonoBehaviour
     {
         ennemie.transform.Translate(Vector3.left * VITESSE_ENNEMIE * Time.deltaTime, Space.World);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        print("TRIGGER");
+        if (collider.gameObject.tag == "caisse")
+        {
+            Destroy(collider.gameObject);
+        }
+    }
 }
