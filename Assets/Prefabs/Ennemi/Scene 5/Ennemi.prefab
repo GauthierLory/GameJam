@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95990333897307616}
   - component: {fileID: 114528051960088856}
   - component: {fileID: 50373583960366508}
+  - component: {fileID: 114022763983938324}
   m_Layer: 13
   m_Name: Ennemi
   m_TagString: Untagged
@@ -80,6 +81,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114022763983938324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977545560672342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17ec8f8d8d31c840bfb9f0e356257ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114528051960088856
 MonoBehaviour:
   m_ObjectHideFlags: 1
