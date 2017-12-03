@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CollisionsHero : MonoBehaviour {
+public class CollisionsHero : MonoBehaviour
+{
 
     //definition des points à gagner ou à perdre
     private static int POINTS_POTION = 20;
@@ -16,27 +18,58 @@ public class CollisionsHero : MonoBehaviour {
     public static int SCORE_ACTUEL;
     public static int SCORE_GAGNANT = 180;
     //definition vie
-    private static int POINT_VIE = 1;
-    private static int VIE_INITIALE = 3;
-    private static int VIE_ACTUELLE;
+    public static int POINT_VIE = 1;
+    public static int VIE_INITIALE = 3;
+    public static int VIE_ACTUELLE;
 
-    private Menu gui;
+    private Gui gui;
 
 
     // Use this for initialization
-    void Start () {
-        
+    void Start()
+    {
+        gui = Gui.instance;
+
+        VIE_ACTUELLE = VIE_INITIALE;
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-        
+        if (VIE_INITIALE == 0)
+        {
+
+            gui.finPartie(this);
+        }
+        else if (SCORE_GAGNANT >= 15)
+        {
+            gui.winGame(this);
+        }
     }
 
     //ajout ou supression des points, des vies lors de la collision du hero avec les items
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.gameObject.tag == "ennemi")
+
+        {
+
+            gui = Gui.instance;
+            VIE_ACTUELLE -= 1;
+
+
+            if (VIE_ACTUELLE <= 0)
+            {
+                gui.finPartie(this);
+            }
+            else
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+
+        }
+
+
         if (collider.tag == "potion")
         {
             Destroy(collider.gameObject);
@@ -63,5 +96,12 @@ public class CollisionsHero : MonoBehaviour {
             Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_STOP_HERO;
         }
+
+    }
+
+
+    public void redemarrer()
+    {
+        VIE_INITIALE = 3;
     }
 }
