@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeplacementHero : MonoBehaviour {
+public class DeplacementHero : MonoBehaviour
+{
 
     //vitesse du personnage
     private static float VITESSE_HERO = 2.0f;
+    private bool versDroite = true;
+    private bool versHaut = true;
+
+
 
     //Initialisation du personnage
     Rigidbody2D personnage;
+
+    private Rigidbody2D body;
 
     //Initialisation de la bombe
     public GameObject bombe;
@@ -19,13 +26,22 @@ public class DeplacementHero : MonoBehaviour {
     bool keypressedUp = false;
     bool keypressedDown = false;
 
+    private Animator animateur; // reference vers lanimator du perso
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        animateur = this.GetComponent<Animator>(); // va recuperer la reference de lanimator
+
         personnage = gameObject.GetComponent<Rigidbody2D>();
+
+        body = this.GetComponent<Rigidbody2D>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //personnage qui va sur la droite si le joueur appuie sur la fleche de droite
         if (Input.GetKeyDown(KeyCode.RightArrow) || keypressedRight)
@@ -85,7 +101,37 @@ public class DeplacementHero : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Instantiate(bombe,new Vector3(personnage.transform.position.x,personnage.position.y),Quaternion.identity);
+            Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
         }
+    }
+
+    void FixedUpdate()
+
+    {
+        float move = Input.GetAxis("Horizontal");
+
+        animateur.SetFloat("speed", Mathf.Abs(move));
+
+        body.velocity = new Vector2(move * VITESSE_HERO, body.velocity.y);
+
+        if (move > 0 && !versDroite)
+
+            flip();
+        else if (move < 0 && versDroite)
+            flip();
+
+    }
+
+    private void flip()
+    {
+        versDroite = !versDroite;
+
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+
+        transform.localScale = theScale;
+
+  
+
     }
 }
