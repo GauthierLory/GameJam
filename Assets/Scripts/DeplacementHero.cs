@@ -12,7 +12,7 @@ public class DeplacementHero : MonoBehaviour
 
     private static float TEMPS_LANCEMENT_BOMBE = 3.0f;
     private float tempsRestant = 0.0f;
-    private bool bombeLance=false;
+    private bool bombeLancee=false;
 
     //Initialisation du personnage
     Rigidbody2D personnage;
@@ -131,26 +131,25 @@ public class DeplacementHero : MonoBehaviour
             personnage.transform.Translate(Vector3.down * 0 * Time.deltaTime, Space.World);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && bombeLance==false)
+        //lorsque le joueur clique sur espace, instantiation de la bombe et lancement du temps restant avant un nouveau lance
+        if (Input.GetKeyUp(KeyCode.Space) && bombeLancee==false)
         {
-            bombeLance = true;
+            bombeLancee = true;
             tempsRestant = TEMPS_LANCEMENT_BOMBE;
             Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
+            animateur.Play("Bombe");
         }
 
-        if (bombeLance == true)
+        //lorsque la bombe est lancee, decrementation du temps
+        if (bombeLancee == true)
         {
             tempsRestant -= Time.deltaTime;
 
+            //lorsque letemps est à 0 on remet bombeLancee à false
             if(tempsRestant < 0.0f)
             {
-                bombeLance = false;
+                bombeLancee = false;
             }
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            animateur.Play("Bombe");
         }
 
     }
