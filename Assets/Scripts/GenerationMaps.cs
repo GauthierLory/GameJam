@@ -42,7 +42,7 @@ public class GenerationMaps : MonoBehaviour
     int suivantEnnemy;
     private bool estTerminee = false;
 
-    static int stage = 1;
+    static int stage = 5;
 
     void Start()
     {
@@ -126,9 +126,6 @@ public class GenerationMaps : MonoBehaviour
         Instantiate(hero, new Vector2(solDepart[positionHero].transform.position.x, solDepart[positionHero].transform.position.y), Quaternion.identity);
         InstantiateEnnemy();
 
-
-
-
     }
 
     void Update()
@@ -139,29 +136,79 @@ public class GenerationMaps : MonoBehaviour
             GestionStage();
 
         }
-
-
     }
 
     void InstantiateEnnemy()
     {
-        int nb = 5;
+        int nbEnnemi = 5;
         sol = GameObject.FindGameObjectsWithTag("sol");
-
-        for (int j = 0; j < sol.Length; j++)
+        switch (stage)
         {
-            if (sol[j].layer != 9 && nb > 0)
-            {
-                Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
-                nb -= 1;
-            }
+            case 1:
+                nbEnnemi = 5;
+                for (int j = 0; j < sol.Length; j++)
+                {
+                    if (sol[j].layer != 9 && nbEnnemi > 0)
+                    {
+                        Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                        nbEnnemi -= 1;
+                    }
+                }
+                break;
+            case 2:
+                nbEnnemi = 6;
+                for (int j = 0; j < sol.Length; j++)
+                {
+                    if (sol[j].layer != 9 && nbEnnemi > 0)
+                    {
+                        Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                        nbEnnemi -= 1;
+                    }
+                }
+                break;
+            case 3:
+                nbEnnemi = 7;
+                for (int j = 0; j < sol.Length; j++)
+                {
+                    if (sol[j].layer != 9 && nbEnnemi > 0)
+                    {
+                        Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                        nbEnnemi -= 1;
+                    }
+                }
+                break;
+            case 4:
+                nbEnnemi = 8;
+                for (int j = 0; j < sol.Length; j++)
+                {
+                    if (sol[j].layer != 9 && nbEnnemi > 0)
+                    {
+                        Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                        nbEnnemi -= 1;
+                    }
+                }
+                break;
+            case 5:
+                nbEnnemi = 9;
+                for (int j = 0; j < sol.Length; j++)
+                {
+                    if (sol[j].layer != 9 && nbEnnemi > 0)
+                    {
+                        Instantiate(ennemy, new Vector2(sol[j].transform.position.x, sol[j].transform.position.y), Quaternion.identity);
+                        nbEnnemi -= 1;
+                    }
+                }
+                break;
         }
+        
+
+        
     }
 
     void GestionStage()
     {
         estTerminee = true;
-        stage += stage;
+        //stage += stage;
 
         if (stage == 5 && Application.loadedLevelName == "Level1")
         {
