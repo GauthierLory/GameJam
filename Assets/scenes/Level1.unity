@@ -4676,8 +4676,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 595170001}
-  - component: {fileID: 595170000}
   - component: {fileID: 595170003}
+  - component: {fileID: 595170000}
   m_Layer: 0
   m_Name: GenerateMaps
   m_TagString: Untagged
@@ -4693,7 +4693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 595169999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5da0542b52b2c74e8396d703bb87392, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a2655beb6df87b48b490ad0e1710c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   caisse: {fileID: 1566685003322274, guid: de9d4a1158d135d41892f5f7a6bf2396, type: 2}
