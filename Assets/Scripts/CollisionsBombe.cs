@@ -19,10 +19,10 @@ public class CollisionsBombe : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        print("TRIGGER");
+        
         if (collider.gameObject.tag == "caisse")
         {
-            Destroy(collider.gameObject);
+            print("TRIGGER");
         }
     }
 }

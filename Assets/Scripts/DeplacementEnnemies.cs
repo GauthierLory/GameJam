@@ -52,24 +52,20 @@ public class DeplacementEnnemies : MonoBehaviour
         {
             if(versGauche && !versDroite && !versHaut && !versBas)
             {
-                print("versDroite");
                 versGauche = false;
                 versDroite = true;
             }else if (!versGauche && versDroite && !versHaut && !versBas)
             {
-                print("versHaut");
                 versDroite = false;
                 versHaut = true;
             }
             else if (!versBas && versHaut && !versGauche && !versDroite)
             {
-                print("versBas");
                 versHaut = false;
                 versBas = true;
             }
             else if (versBas && !versHaut && !versGauche && !versDroite)
             {
-                print("versGauche");
                 versBas = false;
                 versGauche = true;
             }

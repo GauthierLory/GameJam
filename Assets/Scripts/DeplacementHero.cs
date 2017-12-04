@@ -136,7 +136,7 @@ public class DeplacementHero : MonoBehaviour
         {
             bombeLancee = true;
             tempsRestant = TEMPS_LANCEMENT_BOMBE;
-            Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.position.y), Quaternion.identity);
+            Instantiate(bombe, new Vector3(personnage.transform.position.x, personnage.transform.position.y), Quaternion.identity);
             animateur.Play("Bombe");
         }
 
