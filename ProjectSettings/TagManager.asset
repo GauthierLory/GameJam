@@ -18,6 +18,7 @@ TagManager:
   - obstacle
   - murDestructible
   - ennemi
+  - explosion
   layers:
   - Default
   - TransparentFX

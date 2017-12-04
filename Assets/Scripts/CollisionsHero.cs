@@ -20,7 +20,7 @@ public class CollisionsHero : MonoBehaviour
     //definition vie
     public static int POINT_VIE = 1;
     public static int VIE_INITIALE = 3;
-    public static int VIE_ACTUELLE;
+    public static int VIE_ACTUELLE = VIE_INITIALE;
 
     private Gui gui;
 
@@ -29,13 +29,13 @@ public class CollisionsHero : MonoBehaviour
     void Start()
     {
         gui = Gui.instance;
-
-        VIE_ACTUELLE = VIE_INITIALE;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (VIE_INITIALE == 0)
         {
 
@@ -43,7 +43,7 @@ public class CollisionsHero : MonoBehaviour
         }
         else if (SCORE_GAGNANT >= 15)
         {
-            gui.winGame(this);
+            //gui.winGame();
         }
     }
 
@@ -53,12 +53,9 @@ public class CollisionsHero : MonoBehaviour
         if (collider.gameObject.tag == "ennemi")
 
         {
+            VIE_ACTUELLE -= POINT_VIE;
 
-            gui = Gui.instance;
-            VIE_ACTUELLE -= 1;
-
-
-            if (VIE_ACTUELLE <= 0)
+            if (VIE_ACTUELLE == 0)
             {
                 gui.finPartie(this);
             }
@@ -96,12 +93,18 @@ public class CollisionsHero : MonoBehaviour
             Destroy(collider.gameObject);
             SCORE_ACTUEL += POINTS_STOP_HERO;
         }
+        else if (collider.tag == "explosion")
+        {
+            Destroy(collider.gameObject);
+            VIE_ACTUELLE -= POINT_VIE;
+            Application.LoadLevel(Application.loadedLevel);
+        }
 
     }
 
 
-    public void redemarrer()
+    public static void redemarrer()
     {
-        VIE_INITIALE = 3;
+        VIE_ACTUELLE = VIE_INITIALE;
     }
 }

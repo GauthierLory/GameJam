@@ -24,17 +24,18 @@ public class Gui : MonoBehaviour {
     {
         instance = this;
 
-        TexteVie.text = "Vie : 3";
-        TexteScore.text = "Points : 0";
+        TexteVie.text = "Vie : " + CollisionsHero.VIE_ACTUELLE;
+        TexteScore.text = "Points : " + CollisionsHero.SCORE_ACTUEL;
         TextLevel.text = "Niveau :99";
-        TexteGameOver.enabled = false;
-        TexteGagner.enabled = false;
-        TexteRecommencer.enabled = false;
+        //TexteGameOver.enabled = false;
+        //TexteGagner.enabled = false;
+        //TexteRecommencer.enabled = false;
     }
 
     void Update()
     {
         TexteVie.text = "Vie : "+ CollisionsHero.VIE_ACTUELLE;
+        TexteScore.text = "Points : " + CollisionsHero.SCORE_ACTUEL;
     }
 
     public void finPartie(CollisionsHero appelant)
@@ -45,7 +46,7 @@ public class Gui : MonoBehaviour {
         Time.timeScale = 0f;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            perso.redemarrer();
+            CollisionsHero.redemarrer();
             SceneManager.LoadScene(0);
             Time.timeScale = 1f;
             TexteGagner.enabled = false;
@@ -54,25 +55,18 @@ public class Gui : MonoBehaviour {
 
     }
 
-    public void winGame(CollisionsHero appelant)
+    /*public void winGame()
     {
         TexteGagner.enabled = true;
         TexteRecommencer.enabled = true;
-        this.perso = appelant;
         Time.timeScale = 0f;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            perso.redemarrer();
+            CollisionsHero.redemarrer();
             SceneManager.LoadScene(1);
             Time.timeScale = 1f;
             TexteGagner.enabled = false;
             TexteRecommencer.enabled = false;
         }
-    }
-
-    public void updateScore(string points)
-    {
-        TexteScore.text = points;
-
-    }
+    }*/
 }
