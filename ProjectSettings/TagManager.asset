@@ -17,6 +17,7 @@ TagManager:
   - solDepart
   - obstacle
   - murDestructible
+  - ennemi
   layers:
   - Default
   - TransparentFX
