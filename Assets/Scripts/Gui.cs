@@ -25,8 +25,8 @@ public class Gui : MonoBehaviour {
         instance = this;
 
         TexteVie.text = "Vie : " + CollisionsHero.VIE_ACTUELLE;
-        TexteScore.text = "Points : " + CollisionsHero.SCORE_ACTUEL;
-        TextLevel.text = "Niveau :99";
+        TexteScore.text = " " + CollisionsHero.SCORE_ACTUEL;
+        TextLevel.text = "1";
         //TexteGameOver.enabled = false;
         //TexteGagner.enabled = false;
         //TexteRecommencer.enabled = false;
@@ -34,8 +34,8 @@ public class Gui : MonoBehaviour {
 
     void Update()
     {
-        TexteVie.text = "Vie : "+ CollisionsHero.VIE_ACTUELLE;
-        TexteScore.text = "Points : " + CollisionsHero.SCORE_ACTUEL;
+        TexteVie.text = " "+ CollisionsHero.VIE_ACTUELLE;
+        TexteScore.text = " " + CollisionsHero.SCORE_ACTUEL;
     }
 
     public void finPartie(CollisionsHero appelant)
