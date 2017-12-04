@@ -22,7 +22,7 @@ public class CollisionsBombe : MonoBehaviour
         
         if (collider.gameObject.tag == "caisse")
         {
-            print("TRIGGER");
+            Destroy(collider.gameObject);
         }
     }
 }
